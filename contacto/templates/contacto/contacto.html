@@ -1,0 +1,26 @@
+{% extends "tienda_web_app/base.html" %}
+
+{%  load static %}
+
+{% block content %}
+
+
+<div class="contenedor_formulario">
+    
+    {% if "correcto" in request.GET %}
+
+        <p style="color: snow;">Solicitud enviada</p>
+
+
+    {% endif %}
+
+    <form action="" method="POST" style="text-align: center;">
+        {% csrf_token %}
+        <table style="color: white; margin: 20px auto;">{{Mi_formulario.as_table}}</table>
+        <input type="submit" value="Enviar" style="width: 150px;">
+    </form>
+
+
+</div>
+
+{% endblock %}
